@@ -1,0 +1,23 @@
+name: Deploy to GCP App Engine
+
+on:
+  push:
+    branches:
+      - master # Set to the branch you want to deploy from
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Cloud SDK
+        uses: google-github-actions/setup-gcloud@v0.2.1
+        with:
+          project_id: ${{ secrets.PROJECT_ID }}
+          service_account_key: ${{ secrets.SERVICE_ACCOUNT }}
+
+      - name: Deploy to App Engine
+        run: |
+          gcloud app deploy app.yaml --quiet
