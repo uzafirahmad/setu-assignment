@@ -4,7 +4,7 @@ Simply click the following link to view the website:
 
 https://setu-assignment-uzafir-dot-personal-website-407811.ew.r.appspot.com/
 
-## Running the Website Locally
+## Running the Website Locallyy
 
 **Installation of Live Server Extension**
 
